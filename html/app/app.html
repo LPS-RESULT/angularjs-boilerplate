@@ -1,0 +1,36 @@
+<ng-include src="'./html/common/header.html'"></ng-include>
+
+<div class="offset-header container">
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-3">
+                <label>{{label('weight')}} (kg)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.weight" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('height')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.height" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('width')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.width" ng-change="onParcelValueChange()">
+            </div>
+            <div class="col-xs-3">
+                <label>{{label('depth')}} (cm)</label>
+                <input type="number" min="0" max="9007199254740991" class="form-control"
+                       ng-model="parcel.depth" ng-change="onParcelValueChange()">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3 text-center">
+                <h3>{{label(summary.category)}}</h3>
+                <h3 ng-if="summary.cost!=null">{{"$ "+summary.cost.toFixed(2)}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-include src="'./html/common/footer.html'"></ng-include>
